@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div ng-app="myApp">
+
+		<div ng-controller="firstCtrl">
+			<!-- 123,456,789 -->
+			<p>{{123456789 | number}}</p>
+			<!-- 12,345.679 -->
+			<p>{{12345.6789 | number:3}}</p>
+			<!-- $999,999.00 -->
+			<p>{{999999 | currency}}</p>
+			<!--rmb999,999.00 -->
+			<p>{{999999 | currency:'rmb'}}</p>
+			<!-- "2015-03-03T02:12:25.518Z" -->
+			<p>{{today}}</p>
+			<!-- Mar 3, 2015 10:13:05 AM -->
+			<p>{{today|date:'medium'}}</p>
+			<!-- 3/3/15 10:14 AM -->
+			<p>{{today|date:'short'}}</p>
+			<!-- Tuesday, March 3, 2015 -->
+			<p>{{today|date:'fullDate'}}</p>
+			<!-- March 3, 2015 -->
+			<p>{{today|date:'longDate'}}</p>
+			<!-- Mar 3, 2015 -->
+			<p>{{today|date:'mediumDate'}}</p>
+			<!-- 3/3/15 -->
+			<p>{{today|date:'shortDate'}}</p>
+			<!-- 10:18:42 AM -->
+			<p>{{today|date:'mediumTime'}}</p>
+			<!-- 10:19 AM -->
+			<p>{{today|date:'shortTime'}}</p>
+
+			<!-- 2015 -->
+			<p>
+				{{today | date:'y'}}
+			</p>
+			<!-- 15 -->
+			<p>
+				{{today | date:'yy'}}
+			</p>
+			
+
+			<p>
+				<!-- 3 03 Mar -->
+				{{today | date:'M'}}
+				{{today | date:'MM'}}
+				{{today | date:'MMM'}}
+			</p>
+
+			<p>
+				<!-- 3 03 Tuesday Tue -->
+				{{today | date:'d'}}
+				{{today | date:'dd'}}
+				{{today | date:'EEEE'}}
+				{{today | date:'EEE'}}
+			</p>
+
+			<p>
+				<!-- 10 10 10 10 -->
+				{{today | date:'HH'}}
+				{{today | date:'H'}}
+				{{today | date:'hh'}}
+				{{today | date:'h'}}
+			</p>
+
+			<p>
+				minute:
+				<!-- 27 27 -->
+				{{today | date:'mm'}}
+				{{today | date:'m'}}
+			</p>
+
+			<p>
+				second:
+				<!-- 24 24 .655 -->
+				{{today | date:'ss'}}
+				{{today | date:'s'}}
+				{{today | date:'.sss'}}
+			</p>		
+
+			<p>
+				常用时间格式
+				{{today | date : 'y-MM-dd H:m:s'}}
+			</p>	
+		</div>
+	</div>
+
+<script type="text/javascript" src="../../vendor/angular/angular.js"></script>
+<script type="text/javascript" src="app/index.js"></script>
+</body>
+</html>
