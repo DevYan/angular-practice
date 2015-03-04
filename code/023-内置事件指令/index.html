@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div ng-app="myApp">
+		<div ng-controller="firstCtrl">
+			<button ng-click="changeStatus($event)">切换状态</button>
+			<p>{{status}}</p>
+
+			<div ng-style="defaultStyle">
+				ng-style
+			</div>
+
+			<ul ng-switch on="status">
+				<li ng-switch-when="true">
+					true
+				</li>
+				<li ng-switch-when="false">
+					false
+				</li>
+			</ul>
+			
+			<!-- 同 ng-href -->
+			<img ng-src="{{src}}" alt="">
+		</div>
+
+		<!-- <ul ng-init="cityArr=['ShangHai','BeiJing','GuangZhou']">
+			<li ng-class-even="'even'" ng-class-odd="'odd'" ng-repeat="city in cityArr">
+				<p>index : {{$index}}</p>
+				<p>first : {{$first}}</p>
+				<p>middle : {{$middle}}</p>
+				<p>last : {{$last}}</p>
+				<p>{{city}}</p>
+			</li>
+		</ul> -->
+
+		
+	</div>
+
+<script type="text/javascript" src="../../vendor/angular/angular.js"></script>
+<script type="text/javascript" src="app/index.js"></script>
+</body>
+</html>
